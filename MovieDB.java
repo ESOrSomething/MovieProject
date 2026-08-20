@@ -7,7 +7,6 @@ public class MovieDB {
     public static ArrayList<Movie> readMoviesIntoAL(String filename) {
         File myObj = new File(filename);
         ArrayList<Movie> movies = new ArrayList<>();
-        int lineNum = 0;
 
         // try-with-resources: Scanner will be closed automatically
         try (Scanner myReader = new Scanner(myObj)) {
@@ -16,7 +15,6 @@ public class MovieDB {
             System.out.println(data);
             String[] attributes = data.split("\\t");
             movies.add(new Movie(attributes[0], attributes[1], attributes[2], attributes[3]));
-            lineNum++;
         }
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
