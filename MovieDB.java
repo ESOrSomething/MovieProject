@@ -14,7 +14,7 @@ public class MovieDB {
             String data = myReader.nextLine();
             System.out.println(data);
             String[] attributes = data.split("\\t");
-            movies.add(new Movie(attributes[0], attributes[1], attributes[2], attributes[3]));
+            movies.add(new Movie(attributes[0], attributes[1], Integer.parseInt(attributes[2]), attributes[3]));
         }
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
