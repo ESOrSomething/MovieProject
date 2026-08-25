@@ -26,4 +26,14 @@ public class Movie {
     public String getDirector() {
         return director;
     }
+
+    @Override
+    public String toString() {
+        return (
+            getTitle() + " | " +
+            getLeadActor() + " | " +
+            getReleaseYear() + " | " +
+            getDirector()
+        );
+    }
 }
