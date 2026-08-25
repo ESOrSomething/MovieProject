@@ -13,7 +13,7 @@ public class MovieDB {
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
             System.out.println(data);
-            String[] attributes = data.split("\\t");
+            String[] attributes = data.split(" \\| ");
             movies.add(new Movie(attributes[0], attributes[1], Integer.parseInt(attributes[2]), attributes[3]));
         }
         } catch (FileNotFoundException e) {
