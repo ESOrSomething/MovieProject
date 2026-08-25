@@ -12,7 +12,6 @@ public class MovieDB {
         try (Scanner myReader = new Scanner(myObj)) {
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
-            System.out.println(data);
             String[] attributes = data.split(" \\| ");
             movies.add(new Movie(attributes[0], attributes[1], Integer.parseInt(attributes[2]), attributes[3]));
         }
@@ -23,6 +22,7 @@ public class MovieDB {
         return movies;
     }
     public static void main(String[] args) {
-        readMoviesIntoAL("movies.txt");
+        ArrayList<Movie> movies = readMoviesIntoAL("movies.txt");
+        System.out.println(movies.get(0).toString());
     }
 }
